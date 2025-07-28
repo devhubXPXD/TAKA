@@ -20,7 +20,7 @@ def get_local_subnet():
         print(f"❌ ไม่สามารถหาหมายเลข IP ได้: {e}")
         return None
 
-def scan():
+def scan_network():
     subnet = get_local_subnet()
     if not subnet:
         return
@@ -35,6 +35,16 @@ def scan():
         mac = scanner[host]['addresses'].get('mac', 'N/A')
         print(f"[UP] {host} ({hostname}) - MAC: {mac}")
 
+def main():
+    print("พิมพ์คำสั่ง 'nmap scan' เพื่อสแกน IP ในวง LAN")
+    while True:
+        cmd = input("> ").strip().lower()
+        if cmd == "nmap scan":
+            scan_network()
+        else:
+            print(f"❓ ไม่รู้จักคำสั่ง: {cmd}")
+
 if __name__ == "__main__":
-    scan()
+    main()
+
 
