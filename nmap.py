@@ -36,7 +36,7 @@ def scan_network():
         print(f"[UP] {host} ({hostname}) - MAC: {mac}")
 
 def main():
-    print("พิมพ์คำสั่ง 'nmap scan' เพื่อสแกน IP ในวง LAN")
+    print("พิมพ์คำสั่ง nmap scan เพื่อสแกน IP ในวง LAN")
     while True:
         cmd = input("> ").strip().lower()
         if cmd == "nmap scan":
